@@ -14,9 +14,12 @@ const app = express();
 
 /* ----------------------------- Middlewares ----------------------------- */
 
-// app.js mein CORS enable karein
-app.use(cors({ origin: "*" })); // Production mein aap isme Vercel ka live link bhi daal sakte hain
-app.use(morgan("dev"));
+app.use(cors({
+    origin: "https://project-3-r0z5.onrender.com",
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));app.use(morgan("dev"));
 
 app.use(express.json());
 
