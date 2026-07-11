@@ -11,7 +11,7 @@ import TaskBoard from "../pages/TaskBoard";
 function AppRoutes() {
   return (
     <Routes>
-      <Route path="/login" element={<Navigate to="/login" replace />} />
+      <Route path="/" element={<Navigate to="/login" replace />} />
             <Route path="/register" element={<Register />} />
 
 
