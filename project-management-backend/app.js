@@ -14,12 +14,20 @@ const app = express();
 
 /* ----------------------------- Middlewares ----------------------------- */
 
-app.use(cors({
-    origin: "https://project-3-r0z5.onrender.com",
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-}));app.use(morgan("dev"));
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://project-3-r0z5.onrender.com");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+
+    // Agar request OPTIONS (Preflight) hai, toh use aage mat bhejo, yahi se 200 OK dekar khatam karo
+    if (req.method === "OPTIONS") {
+        return res.sendStatus(200);
+    }
+    next();
+});
+
+app.use(morgan("dev"));
 
 app.use(express.json());
 
