@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 
     // Agar request OPTIONS (Preflight) hai, toh use aage mat bhejo, yahi se 200 OK dekar khatam karo
     if (req.method === "OPTIONS") {
-        return res.sendStatus(200);
+        return res.sendStatus( 200 );
     }
     next();
 });
