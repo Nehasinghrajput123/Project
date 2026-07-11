@@ -19,10 +19,10 @@ function AppRoutes() {
   return (
     <Routes>
       {/* Default route setup */}
-      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="/login" element={<Navigate to="/login" replace />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
-      <Route
+      <Route 
         element={
           <ProtectedRoute>
             <DashboardLayout />
