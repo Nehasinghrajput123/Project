@@ -111,3 +111,8 @@ Build Command: npm install && npm run build
 Publish Directory: dist (or build based on your bundler matrix configuration).
 
 Routing Strategy: Native Render redirect rewrite rules are injected (/* to /index.html with a 200 status payload code) to support clean React Router DOM Single Page Application (SPA) client-side routing and prevent 404 refresh crashes.
+
+
+Admin Login cred:
+email:admin@gmail.com
+password:123456
