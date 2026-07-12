@@ -1,53 +1,51 @@
 # Internal Project Management System (Real-Time Collaboration)
 
-This is an internal project management web application designed to help teams collaborate seamlessly in real time. When a user changes the status of any task, all other logged-in users see the updates instantly without needing to refresh their page.
+An enterprise-grade internal project management web application designed to help corporate teams collaborate seamlessly in real time. Powered by the **MERN Stack** and **Socket.IO**, this application features a dynamic Kanban task board where status transitions sync globally across all active sessions within milliseconds—completely eliminating the need for manual page refreshes.
 
 ---
 
 ## 🔗 Live Links
-* **Frontend Web Application:** [Your Netlify or Vercel URL Here]
+* **Frontend Web Application:** https://project-3-r0z5.onrender.com
 * **Backend Live Server API:** `https://project-backend-f00j.onrender.com`
 
 ---
 
 ## ⚙️ System Architecture (How it Works)
 
-1. **Frontend (React):** The user interface where users log in, register, and interact with a visual Kanban task board.
-2. **Backend (Node.js + Express):** The server that handles all incoming API requests, business logic, and security (JWT Validation).
-3. **Database (MongoDB Atlas):** The cloud database where user data, projects, and tasks are safely stored.
-4. **Real-Time Sync (Socket.IO & Redis):** Opens a continuous bi-directional channel so task movements are updated globally within milliseconds.
+1. **Frontend (React.js + Redux Toolkit):** Responsive client interface featuring full SPA routing, centralized global state management, automated login persistency, and a structured layout layer.
+2. **Backend (Node.js + Express):** Robust middleware-driven application server handling RESTful routing configurations, core corporate workflows, and secure JWT-token parsing.
+3. **Database (MongoDB Atlas):** Document-oriented cloud database architecture utilizing strict data schemas via Mongoose for platform users, workspace tracking, and tasks.
+4. **Real-Time Data Layer (Socket.IO & Redis):** Establishes an open, permanent, bi-directional communication pipeline capable of broadcasting client-side updates instantly to target segments.
 
 ---
 
 ## 🛠️ Features Included
 
-### 1. Authentication & Security
-- **User Registration:** To create a new corporate account.
-- **Secure Login:** Uses JWT token-based authentication to protect dashboard routes from unauthorized access.
+### 1. Robust Authentication & Route Guarding
+- **User Registration:** Secure employee sign-up gateway verifying corporate criteria.
+- **JWT Protected Routes:** Restricts system resources via an encryption checking system (`ProtectedRoute`). Any attempt by unauthorized traffic to bypass workspace sections or metrics layouts forces an instant redirection loop back to the `/login` screen.
+- **Dynamic Role-Based Dashboards:**
+  - **Admin View:** Displays a macro-level footprint of system operations including total projects created, active global tasks, completed system items, and absolute user counts.
+  - **Member View:** Seamlessly adjusts to isolate individual workflows. Uses a localized controller query (`getUserAssignedStats`) to show only assigned projects and private task metrics matching the current user profile.
 
-### 2. Project & Task Tracking
-- **Workspaces:** Option to create and group tasks under specific projects.
-- **Kanban Board:** Track tasks across three mandatory stages:
+### 2. Workspace Management & Visual Kanban Matrix
+- **Project Workspaces:** Structural grouping allowing managers to partition assignments under distinct client deliverables.
+- **3-Stage Mandatory Kanban Columns:** Tracks task progressions dynamically through distinct development lifecycles:
   - `Todo` (Tasks waiting to be started)
-  - `In Progress` (Tasks currently being worked on)
-  - `Done` (Completed tasks)
+  - `In Progress` (Tasks currently being actively worked on)
+  - `Done` (Completed and signed-off tasks)
 
-### 3. Real-Time Socket Events
-- `join:project` - Triggered when a user opens a project board. It places the user into a specific room tied to that project ID.
-- `task:move` - Dispatched when a user drags or updates a task card.
-- `task:updated` - The server catches the movement and broadcasts it instantly to all other active members in that specific room.
+### 3. Asynchronous Real-Time Event Engine
+- `join:project` – Dispatched by the frontend context hook when opening a workspace. It automatically binds the authenticated socket connection to a specific internal server room bounded by that project's database ID.
+- `task:move` – Triggered when an operator modifies an active item's priority or position on the Kanban layout.
+- `task:updated` – Intercepted by the backend socket architecture to instantly multi-broadcast updated card schemas to all other synchronized active team members sharing that project room.
+Step 1: Backend Server Setup:
+npm install
+npm start   (start server)
 
----
+frontend setup :
+npm i 
+npm run dev 
 
-## 💻 Local Setup & Environment Variables (`.env`)
 
-To run this project on your local machine, you must configure the environment variables properly for both backend and frontend layers.
 
-### Step 1: Backend Setup
-1. Open your terminal and go to the backend directory: `cd backend`
-2. Install all required dependencies: `npm install`
-3. Create a file named **`.env`** in the root of your backend folder and add these variables:
-   ```env
-   PORT=5000
-   MONGO_URI=mongodb+srv://neha_new:NehaBharti123@cluster0.zeor1ui.mongodb.net/?appName=Cluster0
-   JWT_SECRET=my_super_secret_key
