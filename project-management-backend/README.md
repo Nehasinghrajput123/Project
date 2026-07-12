@@ -10,8 +10,8 @@ An enterprise-grade internal project management web application designed to help
 * **⚙️ Deployed Backend Live Server API:** https://project-backend-f00j.onrender.com
 * **💻 GitHub Code Repository Link:** https://github.com/Nehasinghrajput123/Project
 * **🚀 CI/CD Pipeline Tracking (GitHub Actions):** https://github.com/Nehasinghrajput123/Project/actions
-* **🎥 Loom Project Walkthrough Video:** [INSERT_YOUR_LOOM_VIDEO_LINK_HERE]
-* **📄 Planning & Design Documents (FRD/System Design):** [INSERT_YOUR_GOOGLE_DOC_OR_REPOSITORY_DOCS_LINK_HERE]
+* **🎥 Loom Project Walkthrough Video:** https://www.loom.com/share/7a403c010d06471095477898991ccb76
+* **📄 Planning & Design Documents (FRD/System Design):** https://docs.google.com/document/d/17m2rjiTx6t7ILP7RsUi4l4eayx1YOJ3viA7nT0jau4o/edit?usp=sharing
 
 ---
 
