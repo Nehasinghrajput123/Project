@@ -1,6 +1,7 @@
 const AuthService = require("../services/auth.services");
 const User = require("../models/user.model")
-
+const Project = require("../models/project.model")
+const Task = require("../models/task.model")
 const {
     registerSchema,
     loginValidation,
@@ -116,10 +117,67 @@ console.log("wkhdwhdiw",err)
 
     }
 };
+const dashboardApiAdmin = async (req, res) => {
+  try {
+    const totalProjects = await Project.countDocuments();
+    const totalTasks = await Task.countDocuments();
+    const completedTasks = await Task.countDocuments({ status: "Done" });
+    const totalUsers = await User.countDocuments();
+    return successResponse(
+      res,
+      "Dashboard metrics fetched successfully.", 
+      {
+        projects: totalProjects,
+        tasks: totalTasks,
+        completed: completedTasks,
+        users: totalUsers, 
+      },
+      200 
+    );
+  } catch (err) {
+    console.error("Dashboard API Error:", err);
+    return res.status(500).json({
+      success: false,
+      message: "Server Error: Dashboard data fetch nahi ho paya.",
+      error: err.message
+    });
+  }
+};
+const getUserAssignedStats = async (req, res) => {
+  try {
+    const userId = req.user.id; 
+    const totalAssignedProjects = await Project.countDocuments({
+      members: userId
+    });
+    const completedTasksCount = await Task.countDocuments({
+      assignedTo: userId,
+      status: "Done"
+    });
+    return successResponse(
+      res,
+      "User assignment stats fetched successfully.",
+      {
+        assignedProjectsCount: totalAssignedProjects,
+        completedTasksCount: completedTasksCount
+      },
+      200
+    );
+
+  } catch (err) {
+    console.error("User Stats API Error:", err);
+    return res.status(500).json({
+      success: false,
+      message: "Server Error: User stats fetch nahi ho paye.",
+      error: err.message
+    });
+  }
+}
 
 module.exports = {
     register,
     login,
     profile,
-    getAllUser
+    getAllUser,
+    dashboardApiAdmin,
+    getUserAssignedStats
 };
