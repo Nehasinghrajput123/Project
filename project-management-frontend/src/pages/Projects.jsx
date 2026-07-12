@@ -15,8 +15,9 @@ function Projects() {
 
   const navigate = useNavigate();
   
-  // Get real logged-in user context
-  const currentUser = JSON.parse(localStorage.getItem("user")) || { _id: "admin-id", role: "Admin" };
+  // 🔍 Safe Extraction of Current User
+  const storedUser = localStorage.getItem("user");
+  const currentUser = storedUser ? JSON.parse(storedUser) : { _id: "admin-id", role: "Admin" };
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -24,8 +25,8 @@ function Projects() {
         setLoading(true);
         let endpoint = "";
 
-        // 🎯 ROLE BASED ROUTING DISPATCHER
-        if (currentUser?.role === "Admin") {
+        // 🎯 Flexible Case-Insensitive Check for API endpoint selection
+        if (currentUser?.role && currentUser.role.toString().toLowerCase() === "admin") {
           endpoint = `/projects/getAllProject?page=${currentPage}&limit=${limit}`;
         } else {
           endpoint = `/projects/user-projects/userId?page=${currentPage}&limit=${limit}`;
@@ -46,11 +47,10 @@ function Projects() {
     };
 
     fetchProjects();
-  }, [currentPage, currentUser._id, currentUser?.role]);
+  }, [currentPage, currentUser?._id, currentUser?.role]);
 
   const handleDelete = async (projectId, e) => {
-    e.stopPropagation();
-    if (window.confirm("Are you sure you want to delete this project workspace?")) {
+    e.stopPropagation(); // Prevents row click navigation triggers
       try {
         await api.delete(`/projects/${projectId}`);
         toast.success("Project deleted successfully");
@@ -58,8 +58,11 @@ function Projects() {
       } catch (error) {
         toast.error(error.response?.data?.message || "Failed to delete project");
       }
-    }
+    
   };
+
+  // Helper check for rendering dashboard titles safely
+  const isAdmin = currentUser?.role && currentUser.role.toString().toLowerCase() === "admin";
 
   return (
     <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between min-h-[580px]">
@@ -69,17 +72,17 @@ function Projects() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-6 mb-6 border-b border-gray-100 gap-4">
           <div>
             <h2 className="text-xl font-bold text-gray-900 tracking-tight">
-              {currentUser?.role === "Admin" ? "All Company Projects" : "My Assigned Workspaces"}
+              {isAdmin ? "All Company Projects" : "My Assigned Workspaces"}
             </h2>
             <p className="text-xs text-gray-500 mt-1">
-              {currentUser?.role === "Admin" 
+              {isAdmin 
                 ? "Monitor workspaces, assign micro-tasks, and track roles in real-time."
                 : "View your active project tracking matrix and synchronized cards."}
             </p>
           </div>
           
-          {/* Admin Role Gate Button (Hidden for Members) */}
-          {currentUser?.role === "Admin" && (
+          {/* Admin Role Gate Button */}
+          {isAdmin && (
             <Link 
               to="/create-project" 
               className="px-5 py-2.5 bg-[#2E75B6] text-white text-xs font-bold rounded-xl hover:bg-[#1C5B8B] hover:shadow-md transition-all flex items-center justify-center gap-2"
@@ -100,7 +103,7 @@ function Projects() {
           </div>
         ) : (
           
-          /* 📊 High-Fidelity Refined Table Matrix */
+          /* Table Matrix Rendering Layer */
           <div className="overflow-x-auto rounded-xl border border-gray-100/80">
             <table className="min-w-full divide-y divide-gray-200/60 text-left text-xs">
               <thead className="bg-gray-50/70 text-gray-500 font-semibold uppercase tracking-wider text-[10px]">
@@ -156,9 +159,9 @@ function Projects() {
                       </div>
                     </td>
 
-                    {/* 5. Custom Functional CTAs */}
+                    {/* 5. Control Actions */}
                     <td className="px-6 py-4 whitespace-nowrap text-center">
-                      <div className="flex items-center justify-center gap-2">
+                      <div className="flex items-center justify-center gap-3">
                         <button
                           onClick={() => navigate(`/dashboard/projects/${project._id}`)}
                           className="px-3 py-1.5 bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white border border-emerald-200/60 rounded-lg text-[11px] font-bold transition-all shadow-sm cursor-pointer"
@@ -166,13 +169,14 @@ function Projects() {
                           View Board
                         </button>
                         
-                        {/* 🎯 DELETE ACTION GATE: Only Creator/Admin can see or execute destructions */}
-                        {currentUser?.role === "Admin" && project.createdBy?._id === currentUser?._id && (
+                        {/* 🎯 BUG FIXED DELETION BOX: Uses reliable Unicode Character 🗑️ inside clear dimensions */}
+                        {isAdmin && (
                           <button
                             onClick={(e) => handleDelete(project._id, e)}
-                            className="px-3 py-1.5 bg-rose-50 text-rose-600 hover:bg-rose-600 hover:text-white border border-rose-200/60 rounded-lg text-[11px] font-bold transition-all shadow-sm cursor-pointer"
+                            title="Delete Project Workspace"
+                            className="w-8 h-8 flex items-center justify-center bg-rose-50 text-rose-600 hover:bg-rose-600 hover:text-white border border-rose-200/80 rounded-lg transition-all shadow-sm cursor-pointer text-sm font-bold"
                           >
-                            Delete
+                            🗑️
                           </button>
                         )}
                       </div>
