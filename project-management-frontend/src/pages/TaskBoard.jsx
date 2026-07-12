@@ -66,7 +66,7 @@ function TaskBoard() {
     
     console.log("Connecting socket for project:", id);
     const token = localStorage.getItem("token"); 
-    const socketUrl = import.meta.env?.VITE_SOCKET_URL || "http://localhost:5000";
+    const socketUrl = "https://project-backend-f00j.onrender.com" || "http://localhost:5000";
     
     const socketInstance = io(socketUrl, {
       auth: { token }
