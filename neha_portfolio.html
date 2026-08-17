@@ -1,0 +1,663 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Neha Bharti | Mern Stack Developer</title>
+
+    <meta name="description" content="Neha Bharti - Mern Stack Developer specializing in Node.js, Express.js, React.js, Nest.js, MongoDB and NestJS.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #111827;
+            color: white;
+        }
+
+        .parallax-section {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .hero-bg {
+            background-image:
+                linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.75)),
+                url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80');
+        }
+
+        .about-bg {
+            background-image:
+                linear-gradient(rgba(0,0,0,.70), rgba(0,0,0,.80)),
+                url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2000&q=80');
+        }
+
+        .experience-bg {
+            background-image:
+                linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.82)),
+                url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2000&q=80');
+        }
+
+        .projects-bg {
+            background-image:
+                linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.82)),
+                url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=2000&q=80');
+        }
+
+        .contact-bg {
+            background-image:
+                linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.82)),
+                url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80');
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1100px;
+            padding: 100px 25px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .glass {
+            background: rgba(17, 24, 39, .78);
+            border: 1px solid rgba(255,255,255,.12);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+        }
+
+        .social-link {
+            transition: transform .2s ease, opacity .2s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-4px);
+            opacity: .75;
+        }
+
+        .skill-tag {
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.15);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 14px;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.left-0{left:0px}.right-0{right:0px}.top-0{top:0px}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mt-10{margin-top:2.5rem}.mt-12{margin-top:3rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-16{height:4rem}.min-h-screen{min-height:100vh}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.max-w-xl{max-width:36rem}.list-inside{list-style-position:inside}.list-disc{list-style-type:disc}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-7{gap:1.75rem}.gap-8{gap:2rem}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.rounded-lg{border-radius:0.5rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.border-white\/40{border-color:rgb(255 255 255 / 0.4)}.bg-gray-950{--tw-bg-opacity:1;background-color:rgb(3 7 18 / var(--tw-bg-opacity, 1))}.bg-gray-950\/90{background-color:rgb(3 7 18 / 0.9)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-8{padding-top:2rem;padding-bottom:2rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-7{line-height:1.75rem}.leading-8{line-height:2rem}.leading-9{line-height:2.25rem}.tracking-\[5px\]{letter-spacing:5px}.tracking-widest{letter-spacing:0.1em}.text-gray-200{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/10:hover{background-color:rgb(255 255 255 / 0.1)}.hover\:text-gray-300:hover{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}@media (min-width: 768px){.md\:flex{display:flex}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:justify-between{justify-content:space-between}.md\:p-12{padding:3rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-7xl{font-size:4.5rem;line-height:1}}</style><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.left-0{left:0px}.right-0{right:0px}.top-0{top:0px}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mt-10{margin-top:2.5rem}.mt-12{margin-top:3rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-16{height:4rem}.min-h-screen{min-height:100vh}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.max-w-xl{max-width:36rem}.list-inside{list-style-position:inside}.list-disc{list-style-type:disc}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-7{gap:1.75rem}.gap-8{gap:2rem}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.rounded-lg{border-radius:0.5rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.border-white\/40{border-color:rgb(255 255 255 / 0.4)}.bg-gray-950{--tw-bg-opacity:1;background-color:rgb(3 7 18 / var(--tw-bg-opacity, 1))}.bg-gray-950\/90{background-color:rgb(3 7 18 / 0.9)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-8{padding-top:2rem;padding-bottom:2rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-7{line-height:1.75rem}.leading-8{line-height:2rem}.leading-9{line-height:2.25rem}.tracking-\[5px\]{letter-spacing:5px}.tracking-widest{letter-spacing:0.1em}.text-gray-200{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/10:hover{background-color:rgb(255 255 255 / 0.1)}.hover\:text-gray-300:hover{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}@media (min-width: 768px){.md\:flex{display:flex}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:justify-between{justify-content:space-between}.md\:p-12{padding:3rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-7xl{font-size:4.5rem;line-height:1}}</style></head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-gray-950/90 backdrop-blur border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="h-16 flex items-center justify-between">
+
+            <a href="#home" class="text-xl font-bold">
+                Neha Bharti
+            </a>
+
+            <div class="hidden md:flex items-center gap-7 text-sm">
+                <a href="#about" class="hover:text-gray-300">About Me</a>
+                <a href="#skills" class="hover:text-gray-300">Skills</a>
+                <a href="#experience" class="hover:text-gray-300">Experience</a>
+                <a href="#projects" class="hover:text-gray-300">Projects</a>
+                <a href="#education" class="hover:text-gray-300">Education</a>
+                <a href="#contact" class="hover:text-gray-300">Contact</a>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section id="home" class="parallax-section hero-bg min-h-screen">
+
+    <div class="content text-center">
+
+        <p class="uppercase tracking-[5px] text-sm text-gray-300 mb-5">
+            Welcome to my portfolio
+        </p>
+
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">
+            Neha Bharti
+        </h1>
+
+        <h2 class="text-2xl md:text-4xl font-semibold text-gray-200 mb-6">
+            Mern Stack Developer
+        </h2>
+
+        <p class="max-w-2xl mx-auto text-gray-300 text-lg leading-8">
+            Results-driven Mern Stack Developer with 3.2+ years of experience, specializing in Node.js, Express.js, React.js and NestJS.js, with experience building scalable APIs, responsive applications and real-time systems.
+        </p>
+
+        <div class="flex justify-center gap-4 mt-10 flex-wrap">
+
+            <a href="#projects" class="px-7 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-200 transition">
+                View Projects
+            </a>
+
+            <a href="#contact" class="px-7 py-3 border border-white/40 rounded-lg font-semibold hover:bg-white/10 transition">
+                Contact Me
+            </a>
+
+        </div>
+
+        <div class="flex justify-center gap-8 mt-12 text-lg">
+
+            <a href="mailto:nehabharti430@gmail.com" class="social-link" aria-label="Email">
+                Email
+            </a>
+
+            <a href="tel:8968751372" class="social-link" aria-label="Phone">
+                Call
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="parallax-section about-bg">
+
+    <div class="content">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <div class="glass p-8 md:p-12 max-w-4xl mx-auto">
+
+            <p class="text-xl leading-9 text-gray-200">
+                I'm Neha Bharti, a Mern Stack Developer focused on building
+                scalable, secure and high-performance web applications.
+            </p>
+
+            <p class="mt-6 text-gray-300 leading-8">
+                My experience spans Node.js, Express.js, NestJS, React.js, MongoDB, MySQL,
+                REST APIs, authentication, real-time systems and performance optimization.
+                I build reusable frontend components, scalable backend APIs and production-ready
+                applications with modern deployment and integration practices.
+            </p>
+
+            <p class="mt-6 text-gray-300 leading-8">
+                <span class="font-semibold text-white">Career Goal:</span>
+                To grow as a Mern Stack Developer by creating scalable, secure and
+                user-friendly applications using modern technologies.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills" class="bg-gray-950 py-24">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <h2 class="section-title">
+            Skills
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <div class="glass p-8">
+                <h3 class="text-xl font-bold mb-5">
+                    Backend
+                </h3>
+
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">NestJS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">JWT</span>
+                    <span class="skill-tag">OAuth</span>
+                    <span class="skill-tag">RBAC</span>
+                    <span class="skill-tag">Authentication</span>
+                    <span class="skill-tag">Authorization</span>
+                </div>
+            </div>
+
+            <div class="glass p-8">
+                <h3 class="text-xl font-bold mb-5">
+                    Frontend
+                </h3>
+
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">Responsive Web Design</span>
+                </div>
+            </div>
+
+            <div class="glass p-8">
+                <h3 class="text-xl font-bold mb-5">
+                    React
+                </h3>
+
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-tag">Hooks</span>
+                    <span class="skill-tag">Components</span>
+                    <span class="skill-tag">Props</span>
+                    <span class="skill-tag">State Management</span>
+                    <span class="skill-tag">Context API</span>
+                    <span class="skill-tag">Redux</span>
+                    <span class="skill-tag">Code Splitting</span>
+                    <span class="skill-tag">Lazy Loading</span>
+                    <span class="skill-tag">useMemo</span>
+                    <span class="skill-tag">useCallback</span>
+                    <span class="skill-tag">React.memo</span>
+                </div>
+            </div>
+
+            <div class="glass p-8">
+                <h3 class="text-xl font-bold mb-5">
+                    Database
+                </h3>
+
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Mongoose</span>
+                    <span class="skill-tag">Schema Design</span>
+                    <span class="skill-tag">Query Optimization</span>
+                </div>
+            </div>
+
+            <div class="glass p-8">
+                <h3 class="text-xl font-bold mb-5">
+                    Tools &amp; Deployment
+                </h3>
+
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">GitHub</span>
+                    <span class="skill-tag">GitLab</span>
+                    <span class="skill-tag">Postman</span>
+                    <span class="skill-tag">Swagger</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">CI/CD Pipeline</span>
+                    <span class="skill-tag">AWS EC2</span>
+                    <span class="skill-tag">AWS S3</span>
+                    <span class="skill-tag">PM2</span>
+                    <span class="skill-tag">Nginx</span>
+                    <span class="skill-tag">Docker</span>
+                </div>
+            </div>
+
+            <div class="glass p-8">
+                <h3 class="text-xl font-bold mb-5">
+                    Architecture &amp; Performance
+                </h3>
+
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-tag">Microservices (Basic)</span>
+                    <span class="skill-tag">Redis Caching</span>
+                    <span class="skill-tag">API Optimization</span>
+                    <span class="skill-tag">Scalable API Design</span>
+                    <span class="skill-tag">Frontend Performance Optimization</span>
+                    <span class="skill-tag">Bundle Optimization</span>
+                    <span class="skill-tag">Image Optimization</span>
+                    <span class="skill-tag">Core Web Vitals</span>
+                </div>
+            </div>
+
+            <div class="glass p-8">
+                <h3 class="text-xl font-bold mb-5">
+                    Real-Time &amp; Integrations
+                </h3>
+
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-tag">Socket.io</span>
+                    <span class="skill-tag">WebSockets</span>
+                    <span class="skill-tag">Real-Time Tracking</span>
+                    <span class="skill-tag">Push Notifications</span>
+                    <span class="skill-tag">Third-Party APIs</span>
+                    <span class="skill-tag">Payment Gateway Integration</span>
+                </div>
+            </div>
+
+            <div class="glass p-8">
+                <h3 class="text-xl font-bold mb-5">
+                    AI &amp; Dev Tools
+                </h3>
+
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-tag">ChatGPT</span>
+                    <span class="skill-tag">Google Gemini</span>
+                    <span class="skill-tag">Claude AI</span>
+                    <span class="skill-tag">Prompt Engineering (Basic)</span>
+                    <span class="skill-tag">Code Generation &amp; Debugging</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+<section id="experience" class="parallax-section experience-bg">
+
+    <div class="content">
+
+        <h2 class="section-title">
+            Experience
+        </h2>
+
+        <div class="glass p-8 md:p-12 max-w-4xl mx-auto">
+
+            <div class="flex flex-col md:flex-row md:justify-between gap-4">
+
+                <div>
+                    <h3 class="text-2xl font-bold">
+                        MERN Stack Developer
+                    </h3>
+
+                    <p class="text-gray-400 mt-2">
+                        CQLSYS Technology
+                    </p>
+                </div>
+
+                <p class="text-gray-400">
+                    Feb 2025 – Mar 2026
+                </p>
+
+            </div>
+
+            <ul class="mt-8 space-y-4 text-gray-300 leading-7 list-disc list-inside">
+
+                <li>
+                    Developed Mern-stack applications using React.js, Node.js, Express.js, and MongoDB.
+                </li>
+
+                <li>
+                    Built reusable React components, responsive dashboards, and REST API integrations.
+                </li>
+
+                <li>
+                    Implemented authentication and optimized APIs, database queries, and application performance.
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="glass p-8 md:p-12 max-w-4xl mx-auto mt-10">
+
+            <div class="flex flex-col md:flex-row md:justify-between gap-4">
+
+                <div>
+                    <h3 class="text-2xl font-bold">
+                        Node.js Developer
+                    </h3>
+
+                    <p class="text-gray-400 mt-2">
+                        Xornor Technology
+                    </p>
+                </div>
+
+                <p class="text-gray-400">
+                    Jan 2023 – Jan 2025
+                </p>
+
+            </div>
+
+            <ul class="mt-8 space-y-4 text-gray-300 leading-7 list-disc list-inside">
+
+                <li>
+                    Developed scalable Node.js/Express.js REST APIs and optimized MongoDB data structures.
+                </li>
+
+                <li>
+                    Built reusable React.js modules, validated forms, and responsive admin dashboards.
+                </li>
+
+                <li>
+                    Implemented CRUD workflows, Socket.io real-time features, authentication, and third-party API integrations.
+                </li>
+
+                <li>
+                    Resolved production issues and contributed to deployment, debugging, and performance optimization.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects" class="parallax-section projects-bg">
+
+    <div class="content">
+
+        <h2 class="section-title">
+            Featured Projects
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-7">
+
+            <!-- Wasslana -->
+            <div class="glass p-8">
+
+                <p class="text-sm uppercase tracking-widest text-gray-400">
+                    Featured Project
+                </p>
+
+                <h3 class="text-2xl font-bold mt-3">
+                    Wasslana — Event Booking Platform
+                </h3>
+
+                <p class="text-gray-300 mt-5 leading-7">
+                    Developed scalable backend infrastructure for event hosting and ticket
+                    booking. Integrated secure payment processing using Moyasar and built
+                    optimized APIs for booking management, user operations and transaction
+                    handling while ensuring data consistency and secure financial transactions.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-6 text-sm text-gray-400">
+                    <span>Node.js</span>
+                    <span>Express.js</span>
+                    <span>MongoDB</span>
+                    <span>Moyasar Payments</span>
+                </div>
+
+            </div>
+
+            <!-- DineSafe -->
+            <div class="glass p-8">
+
+                <p class="text-sm uppercase tracking-widest text-gray-400">
+                    Web Application
+                </p>
+
+                <h3 class="text-2xl font-bold mt-3">
+                    DineSafe — Food Safety Tracking System
+                </h3>
+
+                <p class="text-gray-300 mt-5 leading-7">
+                    Built a QR-based food traceability system for monitoring product safety,
+                    with an admin dashboard backend for centralized data management and
+                    real-time notifications with digital record tracking.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-6 text-sm text-gray-400">
+                    <span>React.js</span>
+                    <span>Node.js</span>
+                    <span>MongoDB</span>
+                    <span>REST API</span>
+                </div>
+
+            </div>
+
+            <!-- SoToned -->
+            <div class="glass p-8">
+
+                <p class="text-sm uppercase tracking-widest text-gray-400">
+                    Backend Project
+                </p>
+
+                <h3 class="text-2xl font-bold mt-3">
+                    SoToned — Fitness Class Platform
+                </h3>
+
+                <p class="text-gray-300 mt-5 leading-7">
+                    Developed a backend system for class scheduling and subscription
+                    management, with role-based access control for users and administrators,
+                    and automated payment and membership workflows.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-6 text-sm text-gray-400">
+                    <span>Node.js</span>
+                    <span>Express.js</span>
+                    <span>MongoDB</span>
+                    <span>RBAC</span>
+                </div>
+
+            </div>
+
+            <!-- SafeRise -->
+            <div class="glass p-8">
+
+                <p class="text-sm uppercase tracking-widest text-gray-400">
+                    Real-Time Project
+                </p>
+
+                <h3 class="text-2xl font-bold mt-3">
+                    SafeRise — Live Safety Tracking App
+                </h3>
+
+                <p class="text-gray-300 mt-5 leading-7">
+                    Implemented a real-time location tracking system using Socket.io, built
+                    emergency alert and notification infrastructure, and developed
+                    socket-based chat functionality.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-6 text-sm text-gray-400">
+                    <span>Socket.io</span>
+                    <span>Node.js</span>
+                    <span>React.js</span>
+                    <span>Real-time Tracking</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+<section id="education" class="bg-gray-950 py-24">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <h2 class="section-title">
+            Education
+        </h2>
+
+        <div class="glass p-8 md:p-12 max-w-3xl mx-auto text-center">
+
+            <h3 class="text-2xl font-bold">
+                B.Sc. IT (Information Technology)
+            </h3>
+
+            <p class="text-gray-400 mt-3">
+                GNA University, Punjab — 2022
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="parallax-section contact-bg">
+
+    <div class="content text-center">
+
+        <h2 class="section-title">
+            Let's Connect
+        </h2>
+
+        <p class="max-w-xl mx-auto text-gray-300 text-lg leading-8">
+            I'm open to Mern Stack development opportunities,
+            interesting projects and professional collaborations.
+        </p>
+
+        <div class="mt-10 flex justify-center gap-5 flex-wrap">
+
+            <a href="mailto:nehabharti430@gmail.com" class="px-7 py-3 bg-white text-gray-900 rounded-lg font-semibold">
+                Email Me
+            </a>
+
+            <a href="tel:8968751372" class="px-7 py-3 border border-white/40 rounded-lg hover:bg-white/10 transition">
+                Call Me
+            </a>
+
+            <p class="px-7 py-3 border border-white/40 rounded-lg">
+                📍 Punjab, India
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-gray-950 border-t border-white/10 py-8 text-center">
+
+    <p class="text-gray-400">
+        © 2026 Neha Bharti. All rights reserved.
+    </p>
+
+    <p class="text-gray-600 text-sm mt-2">
+        Mern Stack Developer Portfolio
+    </p>
+
+</footer>
+
+
+
+</body></html>
